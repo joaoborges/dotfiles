@@ -4,8 +4,8 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- neo-tree
-vim.keymap.set("n", "<Leader>\\", ":Neotree filesystem reveal left toggle<CR>", { desc = "Toggle Neotree" })
-vim.keymap.set({ "n", "i" }, "<c-\\>", ":Neotree filesystem reveal left toggle<CR>", { desc = "Toggle Neotree" })
+vim.keymap.set("n", "<Leader>\\", "<cmd>Neotree filesystem reveal left toggle<cr>", { desc = "Toggle Neotree" })
+vim.keymap.set({ "n", "i" }, "<c-\\>", "<cmd>Neotree filesystem reveal left toggle<cr>", { desc = "Toggle Neotree" })
 
 -- none-ls
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "LSP auto format" })
@@ -19,10 +19,10 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Fi
 -- oil
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
 
--- Projects
+-- projects
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Find projects" })
 
--- Todo
+-- todo
 vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
 -- trouble
@@ -45,7 +45,7 @@ vim.keymap.set("n", "gR", function()
 	require("trouble").toggle("lsp_references")
 end)
 
--- Comments
+-- comments
 vim.keymap.set("n", "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
 end, { desc = "Comment toggle current line" })
@@ -54,6 +54,9 @@ vim.keymap.set("v", "<leader>/", function()
 	vim.api.nvim_feedkeys(esc, "nx", false)
 	require("Comment.api").toggle.linewise(vim.fn.visualmode())
 end, { desc = "Comment toggle current selection" })
+
+-- editor
+vim.keymap.set("n", '<leader>h', '<cmd>nohlsearch<cr>', { desc = "Removing search highlight" })
 
 -- save
 vim.keymap.set({ "n", "i" }, "<c-s>", "<cmd>w<cr>", { desc = "Save" })
@@ -64,13 +67,13 @@ vim.keymap.set({ "n", "i" }, "<c-up>", "<cmd>bprevious<cr>", { desc = "Previous 
 vim.keymap.set({ "n", "i" }, "<c-down>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 vim.keymap.set({ "n", "i" }, "<c-w>", "<cmd>BufDel<cr>", { desc = "Close current buffer" })
 
--- windows
-vim.keymap.set("n", "<c-left>", "<cmd>wincmd h<cr>", { desc = "Left window" })
--- NOTE: i'm using UP and DOWN for buffers
-vim.keymap.set("n", "<c-right>", "<cmd>wincmd l<cr>", { desc = "Right window" })
+-- windows (tmux aware)
+vim.keymap.set({ "n", "i" }, "<a-left>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Left window" })
+vim.keymap.set({ "n", "i" }, "<a-down>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Down window" })
+vim.keymap.set({ "n", "i" }, "<a-up>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Up window" })
+vim.keymap.set({ "n", "i" }, "<a-right>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Right window" })
 
 -- spell
--- TODO: configure spell check
 vim.keymap.set({ "n", "i" }, "<f6>", "<cmd>lua ToggleSpell()<cr>", { desc = "Toggle spell check [en/pt/none]" })
 
 -- background
