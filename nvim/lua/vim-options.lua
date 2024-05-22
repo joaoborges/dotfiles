@@ -1,10 +1,3 @@
--- Basic vim configurations
-
--- Based on:
--- -> https://www.lunarvim.org/configuration/01-settings.html#example-options
--- -> https://github.com/josean-dev/dev-environment-files
--- -> https://github.com/cpow/neovim-for-newbs
-
 -- tabs & indentation
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
@@ -13,10 +6,9 @@ vim.opt.backup = false -- creates a backup file
 vim.opt.autoindent = true -- copy indent from current line when starting new one
 
 -- clipboard
---vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append("unnamedplus") -- allows neovim to access the system clipboard
 
---vim.opt.timeoutlen = 250 -- time to wait for a mapped sequence to complete (in milliseconds)
+-- vim.opt.timeoutlen = 250 -- time to wait for a mapped sequence to complete (in milliseconds)
 -- vim.opt.hidden = true -- required to keep multiple buffers and open multiple buffers
 
 -- backup
