@@ -5,5 +5,5 @@
 ### Directories:
 
 - nvim - for the nvim environment
-- tmux - for the tmus configurations
+- tmux - for the tmux configurations
 
