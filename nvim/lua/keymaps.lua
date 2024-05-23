@@ -91,5 +91,6 @@ vim.keymap.set("n", "<leader>gl", "<cmd>Git pull<cr>", { desc = "Git pull" })
 vim.keymap.set({ "n", "i" }, "<f10>", "<cmd>q<cr>", { desc = "Exit" })
 vim.keymap.set({ "n", "i" }, "<s-f10>", "<cmd>qa<cr>", { desc = "Exit" })
 
--- TODO: moving all keymaps to this files
+-- TODO: moving all keymaps to this file
 -- e.g., plugins/completions.lua
+-- e.g., plugins/debugging.lua

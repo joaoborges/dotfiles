@@ -1,4 +1,4 @@
-# dotfiles
+# Dotfiles
 
 ## Dotfiles for my personal configurations
 
