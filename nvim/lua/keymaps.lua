@@ -1,14 +1,6 @@
--- lsp-config
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-
 -- neo-tree
 vim.keymap.set("n", "<Leader>\\", "<cmd>Neotree filesystem reveal left toggle<cr>", { desc = "Toggle Neotree" })
 vim.keymap.set({ "n", "i" }, "<c-\\>", "<cmd>Neotree filesystem reveal left toggle<cr>", { desc = "Toggle Neotree" })
-
--- none-ls
-vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "LSP auto format" })
 
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
@@ -81,11 +73,18 @@ vim.keymap.set({ "n", "i" }, "<f8>", "<cmd>lua ToggleBackground()<cr>", { desc =
 
 -- programming
 vim.keymap.set({ "n", "i" }, "<f9>", "<cmd>make<cr>", { desc = "Make" })
+-- Git
 vim.keymap.set("n", "<leader>gs", "<cmd>Git status<cr>", { desc = "Git status" })
 vim.keymap.set("n", "<leader>ga", "<cmd>Git add .<cr>", { desc = "Git add all files" })
 vim.keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Git commit" })
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", { desc = "Git push" })
 vim.keymap.set("n", "<leader>gl", "<cmd>Git pull<cr>", { desc = "Git pull" })
+-- lsp-config
+vim.keymap.set("n", "H", vim.lsp.buf.hover, { desc = "LSP Code [H]over" })
+vim.keymap.set("n", "cd", vim.lsp.buf.definition, { desc = "LSP [C]ode [D]efinition"})
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP [C]ode [A]ction" })
+-- none-ls
+vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP auto [C]ode [F]ormat" })
 
 -- exit
 vim.keymap.set({ "n", "i" }, "<f10>", "<cmd>q<cr>", { desc = "Exit" })

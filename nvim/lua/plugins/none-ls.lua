@@ -9,6 +9,7 @@ return {
 		null_ls.setup({
 			-- debug = true,
 			sources = {
+                null_ls.builtins.formatting.prettier,
 				-- lua
 				null_ls.builtins.formatting.stylua,
 				-- python
@@ -17,11 +18,14 @@ return {
 				--null_ls.builtins.formatting.yapf,
 				require("none-ls.diagnostics.flake8"),
 				-- c
-				null_ls.builtins.formatting.clang_format,
+                -- null_ls.builtins.formatting.astyle,
+				-- null_ls.builtins.formatting.clang_format,
+                -- null_ls.builtins.diagnostics.gccdiag,
 				-- R
-				-- require("none-ls.formatting.jupytext"),
+				null_ls.builtins.formatting.format_r,
+				-- null_ls.builtins.formatting.styler,
 				-- Rust
-				--null_ls.builtins.formatting.ast_grep,
+				-- null_ls.builtins.formatting.ast_grep,
 				-- bash
 				null_ls.builtins.formatting.shellharden,
 			},

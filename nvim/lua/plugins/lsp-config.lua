@@ -33,6 +33,9 @@ return {
             -- supported server configurations
             -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/bashls.lua
 
+            capabilities.textDocument.semanticHighlighting = true
+            capabilities.offsetEncoding = { "utf-8" }
+
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities
@@ -43,7 +46,7 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities
 			})
-			lspconfig.ltex.setup({
+			lspconfig.texlab.setup({
 				capabilities = capabilities
 			})
 			lspconfig.pyright.setup({
@@ -61,6 +64,9 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities
 			})
+			-- lspconfig.vale.setup({
+			-- 	capabilities = capabilities
+			-- })
 
 		end,
 	},
