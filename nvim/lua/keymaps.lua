@@ -18,24 +18,24 @@ vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = "Find 
 vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
 -- trouble
-vim.keymap.set("n", "<leader>xx", function()
+vim.keymap.set("n", "<leader>tt", function()
 	require("trouble").toggle()
-end)
-vim.keymap.set("n", "<leader>xw", function()
+end, { desc = "Toggle Trouble" } )
+vim.keymap.set("n", "<leader>tw", function()
 	require("trouble").toggle("workspace_diagnostics")
-end)
-vim.keymap.set("n", "<leader>xd", function()
+end, { desc = "Toggle Trouble Workspace" } )
+vim.keymap.set("n", "<leader>tf", function()
 	require("trouble").toggle("document_diagnostics")
-end)
-vim.keymap.set("n", "<leader>xq", function()
+end, { desc = "Toggle Trouble File/Document" } )
+vim.keymap.set("n", "<leader>tq", function()
 	require("trouble").toggle("quickfix")
-end)
-vim.keymap.set("n", "<leader>xl", function()
+end, { desc = "Toggle Trouble Quickfix" } )
+vim.keymap.set("n", "<leader>tl", function()
 	require("trouble").toggle("loclist")
-end)
-vim.keymap.set("n", "gR", function()
+end, { desc = "Toggle Trouble Loclist" } )
+vim.keymap.set("n", "<space>tr", function()
 	require("trouble").toggle("lsp_references")
-end)
+end, { desc = "Toggle Trouble LSP References" } )
 
 -- comments
 vim.keymap.set("n", "<leader>/", function()
@@ -67,6 +67,8 @@ vim.keymap.set({ "n", "i" }, "<a-right>", "<cmd>NvimTmuxNavigateRight<cr>", { de
 
 -- spell
 vim.keymap.set({ "n", "i" }, "<f6>", "<cmd>lua ToggleSpell()<cr>", { desc = "Toggle spell check [en/pt/none]" })
+
+-- trouble
 
 -- background
 vim.keymap.set({ "n", "i" }, "<f8>", "<cmd>lua ToggleBackground()<cr>", { desc = "Toggle background light/black" })

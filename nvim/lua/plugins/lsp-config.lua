@@ -49,6 +49,9 @@ return {
 			lspconfig.texlab.setup({
 				capabilities = capabilities
 			})
+			lspconfig.ltex.setup({
+				capabilities = capabilities
+			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities
 			})
@@ -64,9 +67,6 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities
 			})
-			-- lspconfig.vale.setup({
-			-- 	capabilities = capabilities
-			-- })
 
 		end,
 	},
