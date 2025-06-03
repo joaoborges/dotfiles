@@ -12,7 +12,8 @@ return {
 				ensure_installed = {
 					-- https://github.com/williamboman/mason-lspconfig.nvim
 					"lua_ls",
-					"tsserver",
+					-- "tsserver",
+					-- "tl_ts",
 					"clangd",
 					"ltex",
 					"pyre",
@@ -40,9 +41,10 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities
 			})
-			lspconfig.tsserver.setup({
-				capabilities = capabilities
-			})
+			-- lspconfig.tsserver.setup({
+			-- lspconfig.tl_ts.setup({
+			-- 	capabilities = capabilities
+			-- })
 			lspconfig.clangd.setup({
 				capabilities = capabilities
 			})
